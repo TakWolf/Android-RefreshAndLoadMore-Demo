@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">RefreshAndLoadMore-Demo</string>
+    <string name="app_name">下拉刷新和加载更多</string>
+    <string name="photo_list">图片列表</string>
+    <string name="photo_list_not_full">图片列表 不足一屏</string>
+    <string name="cnode">CNode 话题列表</string>
+    <string name="cnode_not_full">CNode 话题列表 不足一屏</string>
+    <string name="zhihu">知乎日报</string>
+    <string name="zhihu_not_full">知乎日报 不足一屏</string>
+    <string name="load_more_finished">加载完毕</string>
+    <string name="load_more_failed">加载失败，点击重试</string>
 </resources>

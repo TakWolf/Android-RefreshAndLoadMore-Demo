@@ -13,13 +13,25 @@
         android:fullBackupContent="true">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.PhotoListActivity" />
+
+        <activity android:name=".activity.PhotoListNotFullActivity" />
+
+        <activity android:name=".activity.CNodeActivity" />
+
+        <activity android:name=".activity.CNodeNotFullActivity" />
+
+        <activity android:name=".activity.ZhihuActivity" />
+
+        <activity android:name=".activity.ZhihuNotFullActivity" />
 
     </application>
 
