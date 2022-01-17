@@ -1,8 +1,8 @@
 package com.takwolf.android.demo.refreshandloadmore.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.takwolf.android.demo.refreshandloadmore.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

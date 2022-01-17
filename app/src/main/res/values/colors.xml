@@ -2,4 +2,5 @@
 <resources>
     <color name="app_primary">#ff6200ee</color>
     <color name="app_primary_dark">#ff3700b3</color>
+    <color name="image_placeholder">#20000000</color>
 </resources>

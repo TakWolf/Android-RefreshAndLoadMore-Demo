@@ -1,0 +1,39 @@
+package com.takwolf.android.demo.refreshandloadmore.adapter
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.takwolf.android.demo.refreshandloadmore.R
+import com.takwolf.android.demo.refreshandloadmore.data.local.Photo
+import com.takwolf.android.demo.refreshandloadmore.databinding.ItemPhotoBinding
+
+class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.ViewHolder>(PhotoDiffItemCallback) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(ItemPhotoBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(getItem(position))
+    }
+
+    class ViewHolder(private val binding: ItemPhotoBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(photo: Photo) {
+            binding.imgPhoto.load(photo.url) {
+                placeholder(R.color.image_placeholder)
+            }
+        }
+    }
+}
+
+private object PhotoDiffItemCallback : DiffUtil.ItemCallback<Photo>() {
+    override fun areItemsTheSame(oldItem: Photo, newItem: Photo): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean {
+        return oldItem == newItem
+    }
+}
