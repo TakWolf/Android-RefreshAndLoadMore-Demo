@@ -9,7 +9,7 @@ object FormatUtils {
     private const val HOUR = 60 * MINUTE
     private const val DAY = 24 * HOUR
 
-    private val displayDateTimeFormatter = DateTimeFormatter.ofPattern("uuuu-MM-dd'T'HH:mm")
+    private val displayDateTimeFormatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm")
 
     fun getRelativeTimeSpanString(dateTime: OffsetDateTime): String {
         val offset = Duration.between(dateTime, OffsetDateTime.now()).toMillis()

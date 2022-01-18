@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
+    android:layout_marginBottom="16dp"
     android:padding="16dp"
     android:background="@android:color/white"
     android:elevation="2dp">
@@ -28,18 +28,27 @@
             android:background="@color/cnode_primary"
             tools:text="活动" />
 
+        <TextView
+            android:id="@+id/tv_reply_and_visit_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="12sp"
+            tools:text="18 / 205" />
+
         <Space
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/tv_top_info"
+            android:id="@+id/tv_reply_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?android:textColorSecondary"
             android:textSize="12sp"
-            tools:text="18 / 205 • 2分钟前回复" />
+            tools:text="2分钟前回复" />
 
     </LinearLayout>
 
@@ -85,14 +94,11 @@
         android:gravity="center_vertical"
         app:layout_constraintTop_toTopOf="@+id/divider">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_author"
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:src="@color/image_placeholder"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            tools:ignore="ContentDescription" />
+            android:src="@color/image_placeholder" />
 
         <TextView
             android:id="@+id/tv_author"
@@ -109,7 +115,7 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/tv_bottom_info"
+            android:id="@+id/tv_create_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?android:textColorSecondary"

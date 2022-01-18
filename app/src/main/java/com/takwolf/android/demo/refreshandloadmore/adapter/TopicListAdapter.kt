@@ -26,7 +26,8 @@ class TopicListAdapter : ListAdapter<Topic, TopicListAdapter.ViewHolder>(TopicDi
         @SuppressLint("SetTextI18n")
         fun bind(topic: Topic) {
             binding.tvTab.text = topic.tabDisplayString
-            binding.tvTopInfo.text = "${topic.replyCount} / ${topic.visitCount} • ${FormatUtils.getRelativeTimeSpanString(topic.lastReplyAt)} 回复"
+            binding.tvReplyAndVisitCount.text = "${topic.replyCount} / ${topic.visitCount}"
+            binding.tvReplyTime.text = "${FormatUtils.getRelativeTimeSpanString(topic.lastReplyAt)} 回复"
             binding.tvTitle.text = topic.title
             binding.tvSummary.text = topic.content
             binding.imgAuthor.load(FormatUtils.getCNodeCompatAvatarUrl(topic.author.avatarUrl)) {
@@ -34,7 +35,7 @@ class TopicListAdapter : ListAdapter<Topic, TopicListAdapter.ViewHolder>(TopicDi
                 transformations(CircleCropTransformation())
             }
             binding.tvAuthor.text = topic.author.loginName
-            binding.tvBottomInfo.text = "${FormatUtils.getRelativeTimeSpanString(topic.createAt)} 创建"
+            binding.tvCreateTime.text = "${FormatUtils.getRelativeTimeSpanString(topic.createAt)} 创建"
         }
     }
 }
