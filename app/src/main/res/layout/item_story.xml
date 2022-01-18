@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginHorizontal="16dp"
     app:contentPadding="8dp"
     app:cardCornerRadius="2dp">
 
@@ -25,7 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="?android:attr/textColorPrimary"
-                android:textSize="14sp"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:maxLines="2"
                 android:ellipsize="end"
                 tools:text="这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题" />
@@ -34,6 +36,7 @@
                 android:id="@+id/tv_hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:textColor="?android:textColorSecondary"
                 android:textSize="14sp"
                 android:maxLines="1"

@@ -11,7 +11,7 @@ object JsonUtils {
         .build()
 }
 
-class OffsetDateTimeJsonAdapter {
+private class OffsetDateTimeJsonAdapter {
     @FromJson
     fun fromJson(iso8601: String): OffsetDateTime {
         return OffsetDateTime.parse(iso8601)

@@ -18,4 +18,15 @@ data class Topic(
     @Json(name = "reply_count") val replyCount: Int,
     @Json(name = "visit_count") val visitCount: Int,
     @Json(name = "create_at") val createAt: OffsetDateTime,
-)
+) {
+    val tabDisplayString: String
+    get() {
+        return when (tab) {
+            "share" -> "分享"
+            "ask" -> "问答"
+            "job" -> "招聘"
+            "dev" -> "测试"
+            else -> "全部"
+        }
+    }
+}

@@ -9,6 +9,6 @@ interface CNodeApi {
         @Query("tab") tab: String? = null,
         @Query("page") page: Int = 1,
         @Query("limit") limit: Int = 20,
-        @Query("mdrender") mdrender: Boolean = true,
+        @Query("mdrender") mdrender: Boolean = false,
     ): Result<List<Topic>>
 }

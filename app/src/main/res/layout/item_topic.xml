@@ -1,38 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:contentPadding="8dp"
-    app:cardCornerRadius="2dp">
+    android:layout_marginBottom="8dp"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    android:elevation="2dp">
 
     <LinearLayout
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="4dp"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:background="@color/cnode_primary"
+            tools:text="活动" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_top_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="12sp"
+            tools:text="18 / 205 • 2分钟前回复" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar"
+        tools:text="这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题" />
+
+    <TextView
+        android:id="@+id/tv_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="14sp"
+        android:maxLines="4"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/tv_summary" />
+
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="@+id/divider">
 
         <ImageView
-            android:id="@+id/img_photo"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:id="@+id/img_author"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:src="@color/image_placeholder"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_author"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            android:maxLines="3"
-            android:ellipsize="end"
-            tools:text="这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题" />
+            android:textColor="?android:textColorSecondary"
+            android:textSize="12sp"
+            tools:text="TakWolf" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_bottom_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="12sp"
+            tools:text="4小时前创建" />
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
