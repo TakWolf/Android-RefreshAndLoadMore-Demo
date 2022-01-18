@@ -6,7 +6,7 @@ import com.squareup.moshi.ToJson
 import java.time.OffsetDateTime
 
 object JsonUtils {
-    val moshi = Moshi.Builder()
+    val moshi: Moshi = Moshi.Builder()
         .add(OffsetDateTimeJsonAdapter())
         .build()
 }
