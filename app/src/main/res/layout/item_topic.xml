@@ -35,7 +35,7 @@
             android:layout_marginStart="8dp"
             android:textColor="?android:textColorSecondary"
             android:textSize="12sp"
-            tools:text="18 / 205" />
+            tools:text="18 评论 / 205 阅读" />
 
         <Space
             android:layout_width="0dp"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:textColor="?android:textColorSecondary"
             android:textSize="12sp"
-            tools:text="2分钟前回复" />
+            tools:text="新评论：2分钟前" />
 
     </LinearLayout>
 
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:textColor="?android:textColorSecondary"
             android:textSize="12sp"
-            tools:text="4小时前创建" />
+            tools:text="创建于：4小时前" />
 
     </LinearLayout>
 
