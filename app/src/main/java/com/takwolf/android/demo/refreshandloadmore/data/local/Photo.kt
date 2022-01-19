@@ -30,7 +30,7 @@ data class Photo(
             "https://static.takwolf.com/app-test/minami-kotori/16.jpg",
             "https://static.takwolf.com/app-test/minami-kotori/17.jpg",
             "https://static.takwolf.com/app-test/minami-kotori/18.png",
-            "https://static.takwolf.com/app-test/minami-kotori/19.jpg"
+            "https://static.takwolf.com/app-test/minami-kotori/19.jpg",
         )
 
         fun getList(size: Int = 100): MutableList<Photo> {
