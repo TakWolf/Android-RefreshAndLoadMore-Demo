@@ -1,7 +1,6 @@
 package com.takwolf.android.demo.refreshandloadmore.data.local
 
 import java.util.*
-import kotlin.collections.ArrayList
 import kotlin.math.abs
 import kotlin.random.Random
 
