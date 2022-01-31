@@ -2,13 +2,13 @@ package com.takwolf.android.demo.refreshandloadmore.vm
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.takwolf.android.hfrecyclerview.loadmorefooter.LoadMoreState
+import com.takwolf.android.hfrecyclerview.loadmorefooter.LoadMoreFooter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 abstract class PagingViewModel<Entity, PagingParams> : ListViewModel<Entity>() {
     val refreshStateData = MutableLiveData(false)
-    val loadMoreStateData = MutableLiveData(LoadMoreState.DISABLED)
+    val loadMoreStateData = MutableLiveData(LoadMoreFooter.STATE_DISABLED)
     private var isRefreshDoing = false
     private var isLoadMoreDoing = false
     private var version = 0
@@ -36,7 +36,7 @@ abstract class PagingViewModel<Entity, PagingParams> : ListViewModel<Entity>() {
             isRefreshDoing = false
             refreshStateData.value = false
             isLoadMoreDoing = false
-            loadMoreStateData.value = if (isFinished) LoadMoreState.FINISHED else LoadMoreState.ENDLESS
+            loadMoreStateData.value = if (isFinished) LoadMoreFooter.STATE_FINISHED else LoadMoreFooter.STATE_ENDLESS
         }
     }
 
@@ -49,7 +49,7 @@ abstract class PagingViewModel<Entity, PagingParams> : ListViewModel<Entity>() {
 
     fun loadMore() {
         if (!isLoadMoreDoing && !isFinished) {
-            loadMoreStateData.value = LoadMoreState.LOADING
+            loadMoreStateData.value = LoadMoreFooter.STATE_LOADING
             isLoadMoreDoing = true
             viewModelScope.launch(Dispatchers.IO) {
                 doLoadMore(version, pagingParams!!)
@@ -69,7 +69,7 @@ abstract class PagingViewModel<Entity, PagingParams> : ListViewModel<Entity>() {
                 this@PagingViewModel.pagingParams = pagingParams
                 this@PagingViewModel.isFinished = isFinished
                 isLoadMoreDoing = false
-                loadMoreStateData.value = if (isFinished) LoadMoreState.FINISHED else LoadMoreState.ENDLESS
+                loadMoreStateData.value = if (isFinished) LoadMoreFooter.STATE_FINISHED else LoadMoreFooter.STATE_ENDLESS
             }
         }
     }
@@ -78,7 +78,7 @@ abstract class PagingViewModel<Entity, PagingParams> : ListViewModel<Entity>() {
         if (this.version == version) {
             viewModelScope.launch(Dispatchers.Main) {
                 isLoadMoreDoing = false
-                loadMoreStateData.value = LoadMoreState.FAILED
+                loadMoreStateData.value = LoadMoreFooter.STATE_FAILED
             }
         }
     }
