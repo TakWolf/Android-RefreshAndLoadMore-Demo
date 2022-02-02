@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<com.takwolf.android.insetswidget.constraintlayout.InsetsConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
-    android:clipChildren="false"
-    android:fitsSystemWindows="true">
+    app:isw_insetsType="statusBars|navigationBars"
+    app:isw_insetsPaddingBottom="false">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -21,8 +20,6 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:clipChildren="false"
         app:layout_constrainedHeight="true"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -81,8 +78,13 @@
                 android:text="@string/zhihu_not_full"
                 android:textAllCaps="false" />
 
+            <com.takwolf.android.insetswidget.InsetsSpace
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isw_insetsType="navigationBars" />
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</com.takwolf.android.insetswidget.constraintlayout.InsetsConstraintLayout>

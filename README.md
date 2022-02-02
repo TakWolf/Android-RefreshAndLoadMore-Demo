@@ -11,9 +11,9 @@
 
 应用架构符合 [Jetpack](https://developer.android.com/jetpack/getting-started) 。有一个通用于分页的 `ViewModel` 实现： [PagingViewModel](app/src/main/java/com/takwolf/android/demo/refreshandloadmore/vm/PagingViewModel.kt) 。
 
-适配了沉浸式导航栏。
-
 加载更多支持预载。并且数据填充不足一屏的情况，加载更多会自动触发。
+
+适配了沉浸式导航栏，使用了 [InsetsWidget](https://github.com/TakWolf/Android-InsetsWidget) 方案。
 
 具体思路和实现细节请参考程序。
 
