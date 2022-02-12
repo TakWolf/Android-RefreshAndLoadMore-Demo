@@ -7,17 +7,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.takwolf.android.demo.refreshandloadmore.R
 import com.takwolf.android.demo.refreshandloadmore.adapter.TopicListAdapter
 import com.takwolf.android.demo.refreshandloadmore.databinding.ActivityRefreshAndLoadMoreBinding
-import com.takwolf.android.demo.refreshandloadmore.helper.PagingViewHelper
 import com.takwolf.android.demo.refreshandloadmore.holder.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.TopicNotFullPagingViewModel
+import com.takwolf.android.demo.refreshandloadmore.vm.holder.setupView
 
 class CNodeNotFullActivity : AppCompatActivity() {
+    private val viewModel: TopicNotFullPagingViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val viewModel: TopicNotFullPagingViewModel by viewModels()
+        viewModel.toastHolder.setupView(this, this)
 
         binding.toolbar.setTitle(R.string.cnode_not_full)
         binding.toolbar.setNavigationOnClickListener {
@@ -28,7 +30,7 @@ class CNodeNotFullActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView)
         val adapter = TopicListAdapter()
-        PagingViewHelper.listen(this, viewModel, binding.refreshLayout, loadMoreFooter, adapter)
+        viewModel.topicsHolder.setupView(this, adapter, binding.refreshLayout, loadMoreFooter)
         loadMoreFooter.addToRecyclerView(binding.recyclerView)
         binding.recyclerView.adapter = adapter
     }

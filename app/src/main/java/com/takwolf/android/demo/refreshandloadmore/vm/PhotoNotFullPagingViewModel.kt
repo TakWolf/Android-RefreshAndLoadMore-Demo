@@ -1,20 +1,10 @@
 package com.takwolf.android.demo.refreshandloadmore.vm
 
-import com.takwolf.android.demo.refreshandloadmore.data.local.Photo
-import kotlinx.coroutines.delay
+import androidx.lifecycle.ViewModel
+import com.takwolf.android.demo.refreshandloadmore.vm.holder.PhotoPagingLiveHolder
+import com.takwolf.android.demo.refreshandloadmore.vm.holder.ToastLiveHolder
 
-class PhotoNotFullPagingViewModel : PagingViewModel<Photo, Int>() {
-    init {
-        refresh()
-    }
-
-    override suspend fun doRefresh() {
-        delay(1000L)
-        refreshSuccess(Photo.getList(1), 1, false)
-    }
-
-    override suspend fun doLoadMore(version: Int, pagingParams: Int) {
-        delay(1000L)
-        loadMoreSuccess(version, Photo.getList(1), pagingParams + 1, (pagingParams + 1) >= 10)
-    }
+class PhotoNotFullPagingViewModel : ViewModel() {
+    val toastHolder = ToastLiveHolder()
+    val photosHolder = PhotoPagingLiveHolder(this, toastHolder, 1)
 }
