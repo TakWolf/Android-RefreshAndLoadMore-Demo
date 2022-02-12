@@ -19,8 +19,7 @@ data class Topic(
     @Json(name = "create_at") val createAt: OffsetDateTime,
     @Json(name = "last_reply_at") val lastReplyAt: OffsetDateTime,
 ) {
-    val tabDisplayString: String
-    get() {
+    val tabDisplayString: String get() {
         return when (tab) {
             "share" -> "分享"
             "ask" -> "问答"

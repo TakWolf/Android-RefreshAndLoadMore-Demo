@@ -23,6 +23,7 @@ class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.ViewHolder>(PhotoDi
         fun bind(photo: Photo) {
             binding.imgPhoto.load(photo.url) {
                 placeholder(R.color.image_placeholder)
+                error(R.color.image_placeholder)
             }
         }
     }

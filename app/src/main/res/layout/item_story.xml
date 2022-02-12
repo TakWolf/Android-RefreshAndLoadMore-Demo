@@ -30,7 +30,7 @@
                 android:textStyle="bold"
                 android:maxLines="2"
                 android:ellipsize="end"
-                tools:text="这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题" />
+                tools:text="这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题" />
 
             <TextView
                 android:id="@+id/tv_hint"
@@ -41,7 +41,7 @@
                 android:textSize="14sp"
                 android:maxLines="1"
                 android:ellipsize="end"
-                tools:text="这里是副标题这里是副标题这里是副标题这里是副标题这里是副标题" />
+                tools:text="这里是摘要这里是摘要这里是摘要这里是摘要这里是摘要这里是摘要" />
 
         </LinearLayout>
 
@@ -49,9 +49,9 @@
             android:id="@+id/img_photo"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@color/image_placeholder"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
+            tools:src="@color/image_placeholder"
             tools:ignore="ContentDescription" />
 
     </LinearLayout>

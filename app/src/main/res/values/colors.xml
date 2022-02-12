@@ -6,4 +6,5 @@
     <color name="divider">#1F000000</color>
     <color name="image_placeholder">#1F000000</color>
     <color name="cnode_primary">#FF80BD01</color>
+    <color name="cnode_topic_top">#FFFF5722</color>
 </resources>

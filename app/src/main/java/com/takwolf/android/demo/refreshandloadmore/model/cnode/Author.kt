@@ -7,4 +7,14 @@ import com.squareup.moshi.JsonClass
 data class Author(
     @Json(name = "loginname") val loginName: String?,
     @Json(name = "avatar_url") val avatarUrl: String?,
-)
+) {
+    val avatarUrlCompat: String? get() {
+        return avatarUrl?.let {
+            if (it.startsWith("//gravatar.com/avatar/")) {
+                "https:${it}"
+            } else {
+                it
+            }
+        }
+    }
+}

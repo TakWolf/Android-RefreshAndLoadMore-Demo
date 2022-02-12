@@ -25,6 +25,7 @@ class StoryListAdapter : ListAdapter<Story, StoryListAdapter.ViewHolder>(StoryDi
             binding.tvHint.text = story.hint
             binding.imgPhoto.load(story.images[0]) {
                 placeholder(R.color.image_placeholder)
+                error(R.color.image_placeholder)
             }
         }
     }
