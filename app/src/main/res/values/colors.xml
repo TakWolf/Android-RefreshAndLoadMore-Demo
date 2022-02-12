@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="app_primary">#ff6200ee</color>
-    <color name="app_primary_dark">#ff3700b3</color>
-    <color name="image_placeholder">#20000000</color>
-    <color name="divider">#ffe0e0e0</color>
-    <color name="cnode_primary">#ff80bd01</color>
+    <color name="app_primary">#FF6200EE</color>
+    <color name="app_primary_dark">#FF3700B3</color>
+    <color name="background">#FFF6F6F6</color>
+    <color name="divider">#1F000000</color>
+    <color name="image_placeholder">#1F000000</color>
+    <color name="cnode_primary">#FF80BD01</color>
 </resources>
