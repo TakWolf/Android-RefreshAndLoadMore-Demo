@@ -1,7 +1,7 @@
 package com.takwolf.android.demo.refreshandloadmore.vm.holder
 
 import androidx.lifecycle.ViewModel
-import com.takwolf.android.demo.refreshandloadmore.data.local.Photo
+import com.takwolf.android.demo.refreshandloadmore.model.local.Photo
 import kotlinx.coroutines.delay
 
 class PhotoPagingLiveHolder(

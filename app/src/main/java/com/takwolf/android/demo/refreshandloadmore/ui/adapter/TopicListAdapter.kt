@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.adapter
+package com.takwolf.android.demo.refreshandloadmore.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.takwolf.android.demo.refreshandloadmore.R
-import com.takwolf.android.demo.refreshandloadmore.data.cnode.Topic
 import com.takwolf.android.demo.refreshandloadmore.databinding.ItemTopicBinding
+import com.takwolf.android.demo.refreshandloadmore.model.cnode.Topic
 import com.takwolf.android.demo.refreshandloadmore.util.FormatUtils
 
 class TopicListAdapter : ListAdapter<Topic, TopicListAdapter.ViewHolder>(TopicDiffItemCallback) {

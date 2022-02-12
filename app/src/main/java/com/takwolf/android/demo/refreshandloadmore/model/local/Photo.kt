@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.data.local
+package com.takwolf.android.demo.refreshandloadmore.model.local
 
 import java.util.*
 import kotlin.math.abs

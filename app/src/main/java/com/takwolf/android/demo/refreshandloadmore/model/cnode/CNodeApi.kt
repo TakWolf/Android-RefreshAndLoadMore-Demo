@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.data.cnode
+package com.takwolf.android.demo.refreshandloadmore.model.cnode
 
 import retrofit2.http.GET
 import retrofit2.http.Query

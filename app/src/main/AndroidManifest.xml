@@ -11,7 +11,7 @@
         android:theme="@style/Theme.App">
 
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,17 +19,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.PhotoListActivity" />
+        <activity android:name=".ui.activity.PhotoListActivity" />
 
-        <activity android:name=".activity.PhotoListNotFullActivity" />
+        <activity android:name=".ui.activity.PhotoListNotFullActivity" />
 
-        <activity android:name=".activity.CNodeActivity" />
+        <activity android:name=".ui.activity.CNodeActivity" />
 
-        <activity android:name=".activity.CNodeNotFullActivity" />
+        <activity android:name=".ui.activity.CNodeNotFullActivity" />
 
-        <activity android:name=".activity.ZhihuActivity" />
+        <activity android:name=".ui.activity.ZhihuActivity" />
 
-        <activity android:name=".activity.ZhihuNotFullActivity" />
+        <activity android:name=".ui.activity.ZhihuNotFullActivity" />
 
     </application>
 

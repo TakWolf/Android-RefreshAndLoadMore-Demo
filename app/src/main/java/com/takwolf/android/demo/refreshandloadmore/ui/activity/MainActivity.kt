@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.activity
+package com.takwolf.android.demo.refreshandloadmore.ui.activity
 
 import android.content.Intent
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.data.cnode
+package com.takwolf.android.demo.refreshandloadmore.model.zhihu
 
 import com.takwolf.android.demo.refreshandloadmore.util.JsonUtils
 import okhttp3.OkHttpClient
@@ -6,12 +6,12 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-object CNodeClient {
-    val api: CNodeApi
+object ZhihuClient {
+    val api: ZhihuApi
 
     init {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://cnodejs.org/api/v1/")
+            .baseUrl("https://news-at.zhihu.com/api/4/")
             .client(OkHttpClient.Builder()
                 .addInterceptor(HttpLoggingInterceptor().apply {
                     level = HttpLoggingInterceptor.Level.BODY
@@ -19,6 +19,6 @@ object CNodeClient {
                 .build())
             .addConverterFactory(MoshiConverterFactory.create(JsonUtils.moshi))
             .build()
-        api = retrofit.create(CNodeApi::class.java)
+        api = retrofit.create(ZhihuApi::class.java)
     }
 }

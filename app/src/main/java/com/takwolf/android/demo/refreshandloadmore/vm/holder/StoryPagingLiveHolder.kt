@@ -2,8 +2,8 @@ package com.takwolf.android.demo.refreshandloadmore.vm.holder
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.takwolf.android.demo.refreshandloadmore.data.zhihu.Story
-import com.takwolf.android.demo.refreshandloadmore.data.zhihu.ZhihuClient
+import com.takwolf.android.demo.refreshandloadmore.model.zhihu.Story
+import com.takwolf.android.demo.refreshandloadmore.model.zhihu.ZhihuClient
 
 class StoryPagingLiveHolder(
     viewModel: ViewModel,

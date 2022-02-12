@@ -2,8 +2,8 @@ package com.takwolf.android.demo.refreshandloadmore.vm.holder
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.takwolf.android.demo.refreshandloadmore.data.cnode.CNodeClient
-import com.takwolf.android.demo.refreshandloadmore.data.cnode.Topic
+import com.takwolf.android.demo.refreshandloadmore.model.cnode.CNodeClient
+import com.takwolf.android.demo.refreshandloadmore.model.cnode.Topic
 
 class TopicPagingLiveHolder(
     viewModel: ViewModel,

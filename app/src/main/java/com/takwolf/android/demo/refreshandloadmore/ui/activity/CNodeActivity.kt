@@ -1,13 +1,13 @@
-package com.takwolf.android.demo.refreshandloadmore.activity
+package com.takwolf.android.demo.refreshandloadmore.ui.activity
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.takwolf.android.demo.refreshandloadmore.R
-import com.takwolf.android.demo.refreshandloadmore.adapter.TopicListAdapter
 import com.takwolf.android.demo.refreshandloadmore.databinding.ActivityRefreshAndLoadMoreBinding
-import com.takwolf.android.demo.refreshandloadmore.holder.LoadMoreFooter
+import com.takwolf.android.demo.refreshandloadmore.ui.adapter.TopicListAdapter
+import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.TopicPagingViewModel
 import com.takwolf.android.demo.refreshandloadmore.vm.holder.setupView
 

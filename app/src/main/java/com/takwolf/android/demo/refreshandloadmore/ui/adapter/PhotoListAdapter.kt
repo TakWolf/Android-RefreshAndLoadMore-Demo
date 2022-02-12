@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.adapter
+package com.takwolf.android.demo.refreshandloadmore.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.takwolf.android.demo.refreshandloadmore.R
-import com.takwolf.android.demo.refreshandloadmore.data.local.Photo
 import com.takwolf.android.demo.refreshandloadmore.databinding.ItemPhotoBinding
+import com.takwolf.android.demo.refreshandloadmore.model.local.Photo
 
 class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.ViewHolder>(PhotoDiffItemCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

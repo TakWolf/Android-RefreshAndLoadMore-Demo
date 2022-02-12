@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.data.cnode
+package com.takwolf.android.demo.refreshandloadmore.model.cnode
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

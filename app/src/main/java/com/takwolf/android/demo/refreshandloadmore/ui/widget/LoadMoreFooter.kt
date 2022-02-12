@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.holder
+package com.takwolf.android.demo.refreshandloadmore.ui.widget
 
 import android.view.LayoutInflater
 import android.view.View

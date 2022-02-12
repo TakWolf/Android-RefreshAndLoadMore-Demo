@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.adapter
+package com.takwolf.android.demo.refreshandloadmore.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.takwolf.android.demo.refreshandloadmore.R
-import com.takwolf.android.demo.refreshandloadmore.data.zhihu.Story
 import com.takwolf.android.demo.refreshandloadmore.databinding.ItemStoryBinding
+import com.takwolf.android.demo.refreshandloadmore.model.zhihu.Story
 
 class StoryListAdapter : ListAdapter<Story, StoryListAdapter.ViewHolder>(StoryDiffItemCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

@@ -1,4 +1,4 @@
-package com.takwolf.android.demo.refreshandloadmore.data.zhihu
+package com.takwolf.android.demo.refreshandloadmore.model.zhihu
 
 import retrofit2.http.GET
 import retrofit2.http.Path
