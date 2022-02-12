@@ -10,5 +10,5 @@ interface CNodeApi {
         @Query("page") page: Int = 1,
         @Query("limit") limit: Int = 20,
         @Query("mdrender") mdrender: Boolean = false,
-    ): Result<List<Topic>>
+    ): DataResult<List<Topic>>
 }

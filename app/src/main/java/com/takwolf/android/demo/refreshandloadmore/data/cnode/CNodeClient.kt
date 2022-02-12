@@ -12,8 +12,7 @@ object CNodeClient {
     init {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://cnodejs.org/api/v1/")
-            .client(
-                OkHttpClient.Builder()
+            .client(OkHttpClient.Builder()
                 .addInterceptor(HttpLoggingInterceptor().apply {
                     level = HttpLoggingInterceptor.Level.BODY
                 })
