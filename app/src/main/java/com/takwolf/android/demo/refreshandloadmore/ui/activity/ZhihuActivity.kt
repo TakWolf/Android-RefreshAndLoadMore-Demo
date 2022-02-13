@@ -17,7 +17,6 @@ class ZhihuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         viewModel.toastHolder.setupView(this, this)
 
@@ -33,5 +32,7 @@ class ZhihuActivity : AppCompatActivity() {
         viewModel.storiesHolder.setupView(this, adapter, binding.refreshLayout, loadMoreFooter)
         loadMoreFooter.addToRecyclerView(binding.recyclerView)
         binding.recyclerView.adapter = adapter
+
+        setContentView(binding.root)
     }
 }
