@@ -33,12 +33,9 @@ data class Photo(
         )
 
         fun getList(size: Int = 100): MutableList<Photo> {
-            val list = ArrayList<Photo>()
-            repeat(size) {
-                val position = abs(Random.nextInt() % URLS.size)
-                list.add(Photo(UUID.randomUUID().toString(), URLS[position]))
+            return MutableList(size) {
+                Photo(UUID.randomUUID().toString(), URLS[abs(Random.nextInt() % URLS.size)])
             }
-            return list
         }
     }
 }

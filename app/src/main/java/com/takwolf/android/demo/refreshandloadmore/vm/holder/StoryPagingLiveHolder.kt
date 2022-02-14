@@ -24,7 +24,7 @@ class StoryPagingLiveHolder(
     override suspend fun doRefresh(version: Int) {
         try {
             val storyPage = ZhihuClient.api.getLatestStories()
-            val stories = if (isOneMode) arrayListOf(storyPage.stories[0]) else storyPage.stories
+            val stories = if (isOneMode) listOf(storyPage.stories[0]) else storyPage.stories
             refreshSuccess(version, stories, storyPage.date, false)
         } catch (e: Exception) {
             Log.e(TAG, "doRefresh", e)
@@ -35,7 +35,7 @@ class StoryPagingLiveHolder(
     override suspend fun doLoadMore(version: Int, pagingParams: String) {
         try {
             val storyPage = ZhihuClient.api.getStoriesBefore(pagingParams)
-            val stories = if (isOneMode) arrayListOf(storyPage.stories[0]) else storyPage.stories
+            val stories = if (isOneMode) listOf(storyPage.stories[0]) else storyPage.stories
             loadMoreSuccess(version, stories, storyPage.date, false)
         } catch (e: Exception) {
             Log.e(TAG, "doLoadMore", e)
