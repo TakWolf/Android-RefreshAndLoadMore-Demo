@@ -18,8 +18,6 @@ class ZhihuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
 
-        viewModel.toastHolder.setupView(this, this)
-
         binding.toolbar.setTitle(R.string.zhihu)
         binding.toolbar.setNavigationOnClickListener {
             finish()
@@ -29,9 +27,11 @@ class ZhihuActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView)
         val adapter = StoryListAdapter()
-        viewModel.storiesHolder.setupView(this, adapter, binding.refreshLayout, loadMoreFooter)
+        viewModel.storiesHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
         loadMoreFooter.addToRecyclerView(binding.recyclerView)
         binding.recyclerView.adapter = adapter
+
+        viewModel.toastHolder.setupView(this, this)
 
         setContentView(binding.root)
     }

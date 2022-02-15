@@ -18,8 +18,6 @@ class CNodeNotFullActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
 
-        viewModel.toastHolder.setupView(this, this)
-
         binding.toolbar.setTitle(R.string.cnode_not_full)
         binding.toolbar.setNavigationOnClickListener {
             finish()
@@ -29,9 +27,11 @@ class CNodeNotFullActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView)
         val adapter = TopicListAdapter()
-        viewModel.topicsHolder.setupView(this, adapter, binding.refreshLayout, loadMoreFooter)
+        viewModel.topicsHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
         loadMoreFooter.addToRecyclerView(binding.recyclerView)
         binding.recyclerView.adapter = adapter
+
+        viewModel.toastHolder.setupView(this, this)
 
         setContentView(binding.root)
     }

@@ -18,8 +18,6 @@ class PhotoListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
 
-        viewModel.toastHolder.setupView(this, this)
-
         binding.toolbar.setTitle(R.string.photo_list)
         binding.toolbar.setNavigationOnClickListener {
             finish()
@@ -29,9 +27,11 @@ class PhotoListActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView)
         val adapter = PhotoListAdapter()
-        viewModel.photosHolder.setupView(this, adapter, binding.refreshLayout, loadMoreFooter)
+        viewModel.photosHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
         loadMoreFooter.addToRecyclerView(binding.recyclerView)
         binding.recyclerView.adapter = adapter
+
+        viewModel.toastHolder.setupView(this, this)
 
         setContentView(binding.root)
     }
