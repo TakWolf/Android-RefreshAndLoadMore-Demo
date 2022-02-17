@@ -17,12 +17,12 @@ class PhotoPagingLiveHolder(
     }
 
     override suspend fun doRefresh(version: Int) {
-        delay(1000L)
+        delay(1000)
         refreshSuccess(version, Photo.getList(pageSize), 1, false)
     }
 
     override suspend fun doLoadMore(version: Int, pagingParams: Int) {
-        delay(1000L)
+        delay(1000)
         val nextPage = pagingParams + 1
         loadMoreSuccess(version, Photo.getList(pageSize), nextPage, nextPage >= 10)
     }
