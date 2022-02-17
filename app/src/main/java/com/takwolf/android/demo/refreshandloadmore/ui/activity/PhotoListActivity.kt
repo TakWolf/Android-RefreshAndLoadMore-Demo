@@ -25,8 +25,8 @@ class PhotoListActivity : AppCompatActivity() {
 
         binding.refreshLayout.setColorSchemeResources(R.color.app_primary)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView)
-        val adapter = PhotoListAdapter()
+        val loadMoreFooter = LoadMoreFooter.create(layoutInflater, binding.recyclerView)
+        val adapter = PhotoListAdapter(layoutInflater)
         viewModel.photosHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
         loadMoreFooter.addToRecyclerView(binding.recyclerView)
         binding.recyclerView.adapter = adapter

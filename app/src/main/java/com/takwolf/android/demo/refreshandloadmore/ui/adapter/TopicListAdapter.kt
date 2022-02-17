@@ -12,9 +12,9 @@ import com.takwolf.android.demo.refreshandloadmore.databinding.ItemTopicBinding
 import com.takwolf.android.demo.refreshandloadmore.model.cnode.Topic
 import com.takwolf.android.demo.refreshandloadmore.util.timeSpanStringFromNow
 
-class TopicListAdapter : ListAdapter<Topic, TopicListAdapter.ViewHolder>(TopicDiffItemCallback) {
+class TopicListAdapter(private val layoutInflater: LayoutInflater) : ListAdapter<Topic, TopicListAdapter.ViewHolder>(TopicDiffItemCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(ItemTopicBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ViewHolder(ItemTopicBinding.inflate(layoutInflater, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

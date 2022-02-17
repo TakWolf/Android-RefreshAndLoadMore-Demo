@@ -10,9 +10,9 @@ import com.takwolf.android.demo.refreshandloadmore.R
 import com.takwolf.android.demo.refreshandloadmore.databinding.ItemPhotoBinding
 import com.takwolf.android.demo.refreshandloadmore.model.local.Photo
 
-class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.ViewHolder>(PhotoDiffItemCallback) {
+class PhotoListAdapter(private val layoutInflater: LayoutInflater) : ListAdapter<Photo, PhotoListAdapter.ViewHolder>(PhotoDiffItemCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(ItemPhotoBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ViewHolder(ItemPhotoBinding.inflate(layoutInflater, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
