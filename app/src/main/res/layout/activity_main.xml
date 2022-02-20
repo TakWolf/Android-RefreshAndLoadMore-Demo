@@ -14,8 +14,8 @@
         android:background="?attr/colorPrimary"
         android:elevation="@dimen/toolbar_elevation"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="@string/app_name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
