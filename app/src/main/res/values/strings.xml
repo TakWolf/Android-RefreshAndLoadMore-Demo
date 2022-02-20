@@ -9,10 +9,12 @@
     <string name="zhihu_not_full">知乎日报 不足一屏</string>
     <string name="load_more_finished">没有更多内容</string>
     <string name="load_more_failed">加载失败，点击重试</string>
-    <string name="d_days_ago">%d 天前</string>
-    <string name="d_hours_ago">%d 小时前</string>
-    <string name="d_minutes_ago">%d 分钟前</string>
     <string name="just_now">刚刚</string>
+    <string name="d_minutes_ago">%d 分钟前</string>
+    <string name="d_hours_ago">%d 小时前</string>
+    <string name="d_days_ago">%d 天前</string>
+    <string name="d_weeks_ago">%d 周前</string>
+    <string name="d_months_ago">%d 个月前</string>
     <string name="top">置顶</string>
     <string name="d_reply_d_visit">%d 评论 / %d 阅读</string>
     <string name="reply_at_s">新评论：%s</string>
