@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:padding="1dp"
-    android:foreground="?attr/selectableItemBackground">
+    android:foreground="?selectableItemBackground">
 
     <ImageView
         android:id="@+id/img_photo"
