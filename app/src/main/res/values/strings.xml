@@ -16,7 +16,7 @@
     <string name="d_weeks_ago">%d 周前</string>
     <string name="d_months_ago">%d 个月前</string>
     <string name="top">置顶</string>
-    <string name="d_reply_d_visit">%d 评论 / %d 阅读</string>
+    <string name="d_reply_d_visit">%1$d 评论 / %2$d 阅读</string>
     <string name="reply_at_s">新评论：%s</string>
     <string name="create_at_s">创建于：%s</string>
 </resources>
