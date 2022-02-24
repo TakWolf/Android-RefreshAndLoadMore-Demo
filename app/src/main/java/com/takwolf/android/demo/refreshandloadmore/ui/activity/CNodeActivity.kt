@@ -26,10 +26,10 @@ class CNodeActivity : AppCompatActivity() {
         binding.refreshLayout.setColorSchemeResources(R.color.app_primary)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         val loadMoreFooter = LoadMoreFooter.create(layoutInflater, binding.recyclerView)
-        val adapter = TopicListAdapter(layoutInflater)
-        viewModel.topicsHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
         loadMoreFooter.addToRecyclerView(binding.recyclerView)
+        val adapter = TopicListAdapter(layoutInflater)
         binding.recyclerView.adapter = adapter
+        viewModel.topicsHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
 
         viewModel.toastHolder.setupView(this, this)
 

@@ -26,10 +26,10 @@ class ZhihuNotFullActivity : AppCompatActivity() {
         binding.refreshLayout.setColorSchemeResources(R.color.app_primary)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         val loadMoreFooter = LoadMoreFooter.create(layoutInflater, binding.recyclerView)
-        val adapter = StoryListAdapter(layoutInflater)
-        viewModel.storiesHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
         loadMoreFooter.addToRecyclerView(binding.recyclerView)
+        val adapter = StoryListAdapter(layoutInflater)
         binding.recyclerView.adapter = adapter
+        viewModel.storiesHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
 
         viewModel.toastHolder.setupView(this, this)
 
