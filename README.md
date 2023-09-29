@@ -1,6 +1,7 @@
 # Android - RefreshAndLoadMore Demo
 
 [![Platform](https://img.shields.io/badge/platform-Android-brightgreen)](https://developer.android.com)
+[![API](https://img.shields.io/badge/API-21%2B-brightgreen)](https://android-arsenal.com/api?level=21)
 [![License](https://img.shields.io/github/license/TakWolf/Android-RefreshAndLoadMore-Demo)](https://www.apache.org/licenses/LICENSE-2.0)
 
 一种简单且优雅的下拉刷新和加载更多分页的解决方案。
