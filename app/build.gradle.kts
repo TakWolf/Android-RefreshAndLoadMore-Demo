@@ -54,11 +54,11 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.squareup.moshi:moshi:1.15.0")
     ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
-    implementation("io.coil-kt:coil:2.1.0")
+    implementation("io.coil-kt:coil:2.4.0")
     implementation("com.github.hadilq:live-event:1.3.0")
 }
