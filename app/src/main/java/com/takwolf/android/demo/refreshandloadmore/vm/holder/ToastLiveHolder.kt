@@ -17,9 +17,7 @@ fun ToastLiveHolder.setupView(
     owner: LifecycleOwner,
     context: Context,
 ) {
-    toastEvent.observe(owner) {
-        it?.let { message ->
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-        }
+    toastEvent.observe(owner) { message ->
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 }
