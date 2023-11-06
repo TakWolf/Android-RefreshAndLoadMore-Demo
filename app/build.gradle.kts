@@ -46,7 +46,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    implementation("androidx.recyclerview:recyclerview:1.3.1")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("com.github.TakWolf.Android-HeaderAndFooterRecyclerView:hfrecyclerview:0.0.3")
     implementation("com.github.TakWolf.Android-HeaderAndFooterRecyclerView:loadmorefooter:0.0.3")
     implementation("com.github.TakWolf.Android-InsetsWidget:insetswidget:0.0.1")
