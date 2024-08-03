@@ -9,6 +9,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.btnPhotoList.setOnClickListener {
             startActivity(Intent(this, PhotoListActivity::class.java))
@@ -33,7 +34,5 @@ class MainActivity : AppCompatActivity() {
         binding.btnZhihuNotFull.setOnClickListener {
             startActivity(Intent(this, ZhihuNotFullActivity::class.java))
         }
-
-        setContentView(binding.root)
     }
 }

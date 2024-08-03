@@ -17,6 +17,7 @@ class CNodeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.toolbar.setTitle(R.string.cnode)
         binding.toolbar.setNavigationOnClickListener {
@@ -32,7 +33,5 @@ class CNodeActivity : AppCompatActivity() {
         viewModel.topicsHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
 
         viewModel.toastHolder.setupView(this, this)
-
-        setContentView(binding.root)
     }
 }

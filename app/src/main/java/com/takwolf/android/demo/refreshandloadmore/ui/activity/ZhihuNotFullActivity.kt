@@ -17,6 +17,7 @@ class ZhihuNotFullActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.toolbar.setTitle(R.string.zhihu_not_full)
         binding.toolbar.setNavigationOnClickListener {
@@ -32,7 +33,5 @@ class ZhihuNotFullActivity : AppCompatActivity() {
         viewModel.storiesHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
 
         viewModel.toastHolder.setupView(this, this)
-
-        setContentView(binding.root)
     }
 }
