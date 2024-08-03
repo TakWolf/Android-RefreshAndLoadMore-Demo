@@ -3,13 +3,14 @@ package com.takwolf.android.demo.refreshandloadmore.vm.holder
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
-import com.hadilq.liveevent.LiveEvent
+import androidx.lifecycle.MutableLiveData
+import com.takwolf.android.demo.refreshandloadmore.util.Event
 
 class ToastLiveHolder {
-    val toastEvent = LiveEvent<String>()
+    val toastEvent = MutableLiveData<Event<String>>()
 
     fun showToast(message: String) {
-        toastEvent.value = message
+        toastEvent.value = Event(message)
     }
 }
 
@@ -17,7 +18,9 @@ fun ToastLiveHolder.setupView(
     owner: LifecycleOwner,
     context: Context,
 ) {
-    toastEvent.observe(owner) { message ->
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    toastEvent.observe(owner) { event ->
+        event.handleContent()?.let { message ->
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        }
     }
 }

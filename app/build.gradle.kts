@@ -60,5 +60,4 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
     implementation("io.coil-kt:coil:2.6.0")
-    implementation("com.github.hadilq:live-event:1.3.0")
 }
