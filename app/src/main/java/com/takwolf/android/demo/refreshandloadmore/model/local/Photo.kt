@@ -1,6 +1,8 @@
 package com.takwolf.android.demo.refreshandloadmore.model.local
 
-import java.util.*
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import java.util.UUID
 import kotlin.math.abs
 import kotlin.random.Random
 
@@ -32,9 +34,20 @@ data class Photo(
             "https://static.takwolf.com/app-test/minami-kotori/19.jpg",
         )
 
-        fun getList(size: Int = 100): MutableList<Photo> {
-            return MutableList(size) {
-                Photo(UUID.randomUUID().toString(), URLS[abs(Random.nextInt() % URLS.size)])
+        fun new(): Photo {
+            return Photo(UUID.randomUUID().toString(), URLS[abs(Random.nextInt() % URLS.size)])
+        }
+
+        fun newList(size: Int): List<Photo> {
+            return List(size) { new() }
+        }
+
+        suspend fun getPageAsync(pageNum: Int = 0, pageSize: Int = 20): Page<Photo> = coroutineScope {
+            delay(1000)
+            if (pageNum <= 4) {
+                Page(newList(pageSize), pageNum < 4)
+            } else {
+                Page(emptyList(), false)
             }
         }
     }

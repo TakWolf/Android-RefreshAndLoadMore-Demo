@@ -10,16 +10,19 @@ import com.takwolf.android.demo.refreshandloadmore.R
 import com.takwolf.android.demo.refreshandloadmore.databinding.ItemPhotoBinding
 import com.takwolf.android.demo.refreshandloadmore.model.local.Photo
 
-class PhotoListAdapter(private val layoutInflater: LayoutInflater) : ListAdapter<Photo, PhotoListAdapter.ViewHolder>(PhotoDiffItemCallback) {
+class PhotoListAdapter : ListAdapter<Photo, PhotoListAdapter.ViewHolder>(PhotoDiffItemCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(ItemPhotoBinding.inflate(layoutInflater, parent, false))
+        val binding = ItemPhotoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: ItemPhotoBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(
+        private val binding: ItemPhotoBinding,
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(photo: Photo) {
             binding.imgPhoto.load(photo.url) {
                 placeholder(R.color.image_placeholder)

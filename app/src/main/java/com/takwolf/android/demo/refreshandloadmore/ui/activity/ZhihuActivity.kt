@@ -3,13 +3,16 @@ package com.takwolf.android.demo.refreshandloadmore.ui.activity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.takwolf.android.demo.refreshandloadmore.R
 import com.takwolf.android.demo.refreshandloadmore.databinding.ActivityRefreshAndLoadMoreBinding
 import com.takwolf.android.demo.refreshandloadmore.ui.adapter.StoryListAdapter
 import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.StoryPagingViewModel
-import com.takwolf.android.demo.refreshandloadmore.vm.holder.setupView
+import kotlinx.coroutines.launch
 
 class ZhihuActivity : AppCompatActivity() {
     private val viewModel: StoryPagingViewModel by viewModels()
@@ -26,12 +29,19 @@ class ZhihuActivity : AppCompatActivity() {
 
         binding.refreshLayout.setColorSchemeResources(R.color.app_primary)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        val loadMoreFooter = LoadMoreFooter.create(layoutInflater, binding.recyclerView)
-        loadMoreFooter.addToRecyclerView(binding.recyclerView)
-        val adapter = StoryListAdapter(layoutInflater)
-        binding.recyclerView.adapter = adapter
-        viewModel.storiesHolder.setupView(this, binding.refreshLayout, loadMoreFooter, adapter)
-
-        viewModel.toastHolder.setupView(this, this)
+        val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView).apply {
+            addToRecyclerView(binding.recyclerView)
+        }
+        viewModel.pagingSource.setupViews(this, binding.refreshLayout, loadMoreFooter)
+        val adapter = StoryListAdapter().apply {
+            binding.recyclerView.adapter = this
+        }
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.stories.collect { stories ->
+                    adapter.submitList(stories)
+                }
+            }
+        }
     }
 }

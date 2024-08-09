@@ -12,16 +12,19 @@ import com.takwolf.android.demo.refreshandloadmore.databinding.ItemTopicBinding
 import com.takwolf.android.demo.refreshandloadmore.model.cnode.Topic
 import com.takwolf.android.demo.refreshandloadmore.util.timeSpanStringFromNow
 
-class TopicListAdapter(private val layoutInflater: LayoutInflater) : ListAdapter<Topic, TopicListAdapter.ViewHolder>(TopicDiffItemCallback) {
+class TopicListAdapter : ListAdapter<Topic, TopicListAdapter.ViewHolder>(TopicDiffItemCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(ItemTopicBinding.inflate(layoutInflater, parent, false))
+        val binding = ItemTopicBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: ItemTopicBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(
+        private val binding: ItemTopicBinding,
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(topic: Topic) {
             val resources = itemView.resources
             binding.imgGood.isVisible = topic.isGood
