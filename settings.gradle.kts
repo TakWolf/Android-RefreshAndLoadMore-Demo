@@ -17,4 +17,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android-RefreshAndLoadMore-Demo"
 
-include(":app")
+include("app")
