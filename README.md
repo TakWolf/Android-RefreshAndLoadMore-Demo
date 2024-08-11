@@ -14,7 +14,7 @@
 
 适配了沉浸式导航栏，使用了 [InsetsWidget](https://github.com/TakWolf/Android-InsetsWidget) 方案。
 
-有一个通用分页组件： [PagingLiveHolder](app/src/main/java/com/takwolf/android/demo/refreshandloadmore/vm/holder/PagingLiveHolder.kt) 。
+有一个通用分页组件： [PagingSource](app/src/main/java/com/takwolf/android/demo/refreshandloadmore/vm/source/PagingSource.kt) 。
 
 加载更多支持预载。并且数据填充不足一屏的情况，加载更多会自动触发。
 

@@ -1,36 +1,37 @@
 package com.takwolf.android.demo.refreshandloadmore.vm
 
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewModelScope
-import com.takwolf.android.demo.refreshandloadmore.model.local.Photo
-import com.takwolf.android.demo.refreshandloadmore.util.PagingSource
-import kotlinx.coroutines.flow.MutableStateFlow
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.takwolf.android.demo.refreshandloadmore.ui.adapter.PhotoListAdapter
+import com.takwolf.android.demo.refreshandloadmore.vm.source.PhotoPagingSource
+import com.takwolf.android.hfrecyclerview.loadmorefooter.LoadMoreFooter
 import kotlinx.coroutines.launch
 
 class PhotoNotFullPagingViewModel : ViewModel() {
-    val photos = MutableStateFlow(emptyList<Photo>())
-
-    private var pageNum = -1
-
-    val pagingSource = PagingSource(doRefresh = { dataVersion ->
-        viewModelScope.launch {
-            val page = Photo.getPageAsync(pageSize = 1)
-            if (onRefreshSuccess(dataVersion, !page.hasMore)) {
-                photos.value = page.list
-                pageNum = 0
-            }
-        }
-    }, doLoadMore = { dataVersion ->
-        viewModelScope.launch {
-            val page = Photo.getPageAsync(pageNum + 1, 1)
-            if (onLoadMoreSuccess(dataVersion, !page.hasMore)) {
-                photos.value += page.list
-                pageNum += 1
-            }
-        }
-    })
+    private val pagingSource = PhotoPagingSource(viewModelScope, 1)
 
     init {
         pagingSource.refresh()
+    }
+
+    fun setupViews(
+        owner: LifecycleOwner,
+        refreshLayout: SwipeRefreshLayout,
+        loadMoreFooter: LoadMoreFooter,
+        adapter: PhotoListAdapter,
+    ) {
+        pagingSource.setupViews(owner, refreshLayout, loadMoreFooter)
+        owner.lifecycleScope.launch {
+            owner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                pagingSource.photos.collect { photos ->
+                    adapter.submitList(photos)
+                }
+            }
+        }
     }
 }
