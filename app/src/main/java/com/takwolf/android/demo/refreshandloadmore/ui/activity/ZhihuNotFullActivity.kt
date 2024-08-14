@@ -28,9 +28,8 @@ class ZhihuNotFullActivity : AppCompatActivity() {
         val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView).apply {
             addToRecyclerView(binding.recyclerView)
         }
-        val adapter = StoryListAdapter().apply {
-            binding.recyclerView.adapter = this
-        }
+        val adapter = StoryListAdapter()
+        binding.recyclerView.adapter = adapter
         viewModel.setupViews(this, binding.refreshLayout, loadMoreFooter, adapter)
     }
 }

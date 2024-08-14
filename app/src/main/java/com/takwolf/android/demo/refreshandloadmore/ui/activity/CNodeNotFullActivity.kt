@@ -28,9 +28,8 @@ class CNodeNotFullActivity : AppCompatActivity() {
         val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView).apply {
             addToRecyclerView(binding.recyclerView)
         }
-        val adapter = TopicListAdapter().apply {
-            binding.recyclerView.adapter = this
-        }
+        val adapter = TopicListAdapter()
+        binding.recyclerView.adapter = adapter
         viewModel.setupViews(this, binding.refreshLayout, loadMoreFooter, adapter)
     }
 }

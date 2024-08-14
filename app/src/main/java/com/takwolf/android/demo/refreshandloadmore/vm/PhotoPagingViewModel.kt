@@ -9,7 +9,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.takwolf.android.demo.refreshandloadmore.ui.adapter.PhotoListAdapter
 import com.takwolf.android.demo.refreshandloadmore.vm.source.PhotoPagingSource
-import com.takwolf.android.hfrecyclerview.loadmorefooter.LoadMoreFooter
+import com.takwolf.android.hfrecyclerview.paging.LoadMoreFooter
 import kotlinx.coroutines.launch
 
 class PhotoPagingViewModel : ViewModel() {
@@ -25,7 +25,8 @@ class PhotoPagingViewModel : ViewModel() {
         loadMoreFooter: LoadMoreFooter,
         adapter: PhotoListAdapter,
     ) {
-        pagingSource.setupViews(owner, refreshLayout, loadMoreFooter)
+        pagingSource.setupSwipeRefreshLayout(owner, refreshLayout)
+        pagingSource.setupLoadMoreFooter(owner, loadMoreFooter)
         owner.lifecycleScope.launch {
             owner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 pagingSource.photos.collect { photos ->

@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.takwolf.android.demo.refreshandloadmore.ui.adapter.StoryListAdapter
 import com.takwolf.android.demo.refreshandloadmore.util.showToast
 import com.takwolf.android.demo.refreshandloadmore.vm.source.StoryPagingSource
-import com.takwolf.android.hfrecyclerview.loadmorefooter.LoadMoreFooter
+import com.takwolf.android.hfrecyclerview.paging.LoadMoreFooter
 import kotlinx.coroutines.launch
 
 class StoryNotFullPagingViewModel : ViewModel() {
@@ -26,7 +26,8 @@ class StoryNotFullPagingViewModel : ViewModel() {
         loadMoreFooter: LoadMoreFooter,
         adapter: StoryListAdapter,
     ) {
-        pagingSource.setupViews(activity, refreshLayout, loadMoreFooter)
+        pagingSource.setupSwipeRefreshLayout(activity, refreshLayout)
+        pagingSource.setupLoadMoreFooter(activity, loadMoreFooter)
         activity.lifecycleScope.launch {
             activity.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 pagingSource.stories.collect { stories ->

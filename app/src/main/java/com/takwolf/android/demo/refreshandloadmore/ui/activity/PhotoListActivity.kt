@@ -28,9 +28,8 @@ class PhotoListActivity : AppCompatActivity() {
         val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView).apply {
             addToRecyclerView(binding.recyclerView)
         }
-        val adapter = PhotoListAdapter().apply {
-            binding.recyclerView.adapter = this
-        }
+        val adapter = PhotoListAdapter()
+        binding.recyclerView.adapter = adapter
         viewModel.setupViews(this, binding.refreshLayout, loadMoreFooter, adapter)
     }
 }
