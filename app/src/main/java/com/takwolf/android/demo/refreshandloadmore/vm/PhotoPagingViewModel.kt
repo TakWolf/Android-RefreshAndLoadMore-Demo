@@ -1,16 +1,13 @@
 package com.takwolf.android.demo.refreshandloadmore.vm
 
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewModelScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.takwolf.android.demo.refreshandloadmore.ui.adapter.PhotoListAdapter
+import com.takwolf.android.demo.refreshandloadmore.util.observe
 import com.takwolf.android.demo.refreshandloadmore.vm.source.PhotoPagingSource
 import com.takwolf.android.hfrecyclerview.paging.LoadMoreFooter
-import kotlinx.coroutines.launch
 
 class PhotoPagingViewModel : ViewModel() {
     private val pagingSource = PhotoPagingSource(viewModelScope)
@@ -27,12 +24,8 @@ class PhotoPagingViewModel : ViewModel() {
     ) {
         pagingSource.setupSwipeRefreshLayout(owner, refreshLayout)
         pagingSource.setupLoadMoreFooter(owner, loadMoreFooter)
-        owner.lifecycleScope.launch {
-            owner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                pagingSource.photos.collect { photos ->
-                    adapter.submitList(photos)
-                }
-            }
+        pagingSource.photos.observe(owner) { photos ->
+            adapter.submitList(photos)
         }
     }
 }
