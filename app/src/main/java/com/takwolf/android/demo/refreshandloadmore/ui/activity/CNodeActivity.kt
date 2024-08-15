@@ -11,7 +11,7 @@ import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.TopicPagingViewModel
 
 class CNodeActivity : AppCompatActivity() {
-    private val viewModel: TopicPagingViewModel by viewModels()
+    private val viewModel by viewModels<TopicPagingViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

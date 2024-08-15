@@ -11,7 +11,7 @@ import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.PhotoNotFullPagingViewModel
 
 class PhotoListNotFullActivity : AppCompatActivity() {
-    private val viewModel: PhotoNotFullPagingViewModel by viewModels()
+    private val viewModel by viewModels<PhotoNotFullPagingViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -11,7 +11,7 @@ import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.StoryNotFullPagingViewModel
 
 class ZhihuNotFullActivity : AppCompatActivity() {
-    private val viewModel: StoryNotFullPagingViewModel by viewModels()
+    private val viewModel by viewModels<StoryNotFullPagingViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

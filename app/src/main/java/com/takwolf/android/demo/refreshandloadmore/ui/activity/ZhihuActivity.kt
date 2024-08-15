@@ -11,7 +11,7 @@ import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.StoryPagingViewModel
 
 class ZhihuActivity : AppCompatActivity() {
-    private val viewModel: StoryPagingViewModel by viewModels()
+    private val viewModel by viewModels<StoryPagingViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

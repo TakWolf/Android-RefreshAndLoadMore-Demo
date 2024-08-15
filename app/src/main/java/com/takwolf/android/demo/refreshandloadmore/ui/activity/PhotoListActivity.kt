@@ -11,7 +11,7 @@ import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.PhotoPagingViewModel
 
 class PhotoListActivity : AppCompatActivity() {
-    private val viewModel: PhotoPagingViewModel by viewModels()
+    private val viewModel by viewModels<PhotoPagingViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

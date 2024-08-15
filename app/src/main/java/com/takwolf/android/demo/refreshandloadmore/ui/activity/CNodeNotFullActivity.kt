@@ -11,7 +11,7 @@ import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.TopicNotFullPagingViewModel
 
 class CNodeNotFullActivity : AppCompatActivity() {
-    private val viewModel: TopicNotFullPagingViewModel by viewModels()
+    private val viewModel by viewModels<TopicNotFullPagingViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
