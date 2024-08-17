@@ -59,7 +59,6 @@ dependencies {
     implementation("com.github.TakWolf.Android-HeaderAndFooterRecyclerView:hfrecyclerview:0.0.7")
     implementation("com.github.TakWolf.Android-HeaderAndFooterRecyclerView:paging:0.0.7")
     implementation("com.github.TakWolf.Android-InsetsWidget:insetswidget:0.0.1")
-    implementation("com.github.TakWolf.Android-InsetsWidget:constraintlayout:0.0.1")
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.squareup.moshi:moshi:1.15.1")
     ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")

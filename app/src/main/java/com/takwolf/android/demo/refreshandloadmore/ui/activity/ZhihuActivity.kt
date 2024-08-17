@@ -1,6 +1,9 @@
 package com.takwolf.android.demo.refreshandloadmore.ui.activity
 
+import android.graphics.Color
 import android.os.Bundle
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +18,10 @@ class ZhihuActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
+        )
         val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -28,6 +35,7 @@ class ZhihuActivity : AppCompatActivity() {
         val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView).apply {
             addToRecyclerView(binding.recyclerView)
         }
+        binding.recyclerView.addFooterView(R.layout.footer_insets_navigation_bars)
         val adapter = StoryListAdapter()
         binding.recyclerView.adapter = adapter
         viewModel.setupViews(this, binding.refreshLayout, loadMoreFooter, adapter)
