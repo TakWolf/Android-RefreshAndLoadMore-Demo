@@ -20,15 +20,9 @@
 
         <activity android:name=".ui.activity.PhotoListActivity" />
 
-        <activity android:name=".ui.activity.PhotoListNotFullActivity" />
-
         <activity android:name=".ui.activity.CNodeActivity" />
 
-        <activity android:name=".ui.activity.CNodeNotFullActivity" />
-
         <activity android:name=".ui.activity.ZhihuActivity" />
-
-        <activity android:name=".ui.activity.ZhihuNotFullActivity" />
 
     </application>
 

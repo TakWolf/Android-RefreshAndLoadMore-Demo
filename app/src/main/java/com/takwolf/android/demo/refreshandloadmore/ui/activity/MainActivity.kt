@@ -1,6 +1,5 @@
 package com.takwolf.android.demo.refreshandloadmore.ui.activity
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.SystemBarStyle
@@ -19,27 +18,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnPhotoList.setOnClickListener {
-            startActivity(Intent(this, PhotoListActivity::class.java))
+            PhotoListActivity.open(this)
         }
 
-        binding.btnPhotoListNotFull.setOnClickListener {
-            startActivity(Intent(this, PhotoListNotFullActivity::class.java))
+        binding.btnPhotoListNotFullPage.setOnClickListener {
+            PhotoListActivity.open(this, true)
         }
 
         binding.btnCnode.setOnClickListener {
-            startActivity(Intent(this, CNodeActivity::class.java))
+            CNodeActivity.open(this)
         }
 
-        binding.btnCnodeNotFull.setOnClickListener {
-            startActivity(Intent(this, CNodeNotFullActivity::class.java))
+        binding.btnCnodeNotFullPage.setOnClickListener {
+            CNodeActivity.open(this, true)
         }
 
         binding.btnZhihu.setOnClickListener {
-            startActivity(Intent(this, ZhihuActivity::class.java))
+            ZhihuActivity.open(this)
         }
 
-        binding.btnZhihuNotFull.setOnClickListener {
-            startActivity(Intent(this, ZhihuNotFullActivity::class.java))
+        binding.btnZhihuNotFullPage.setOnClickListener {
+            ZhihuActivity.open(this, true)
         }
     }
 }

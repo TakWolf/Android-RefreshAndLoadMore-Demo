@@ -1,16 +1,46 @@
 package com.takwolf.android.demo.refreshandloadmore.vm
 
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.takwolf.android.demo.refreshandloadmore.model.local.Photo
 import com.takwolf.android.demo.refreshandloadmore.ui.adapter.PhotoListAdapter
 import com.takwolf.android.demo.refreshandloadmore.util.observe
-import com.takwolf.android.demo.refreshandloadmore.vm.source.PhotoPagingSource
 import com.takwolf.android.hfrecyclerview.paging.LoadMoreFooter
+import com.takwolf.android.hfrecyclerview.paging.PagingSource
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
 
-class PhotoPagingViewModel : ViewModel() {
-    private val pagingSource = PhotoPagingSource(viewModelScope)
+class PhotoPagingViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
+    val notFullPage = savedStateHandle.get<Boolean>("notFullPage") ?: false
+
+    private val photos = MutableStateFlow(emptyList<Photo>())
+
+    private var pageNum = -1
+
+    private val pagingSource = object : PagingSource() {
+        override fun doRefresh(dataVersion: Int) {
+            viewModelScope.launch {
+                val page = Photo.getPageAsync(pageSize = if (notFullPage) 1 else 20)
+                if (onRefreshSuccess(dataVersion, !page.hasMore)) {
+                    photos.value = page.list
+                    pageNum = 0
+                }
+            }
+        }
+
+        override fun doLoadMore(dataVersion: Int) {
+            viewModelScope.launch {
+                val page = Photo.getPageAsync(pageNum + 1, if (notFullPage) 1 else 20)
+                if (onLoadMoreSuccess(dataVersion, !page.hasMore)) {
+                    photos.value += page.list
+                    pageNum += 1
+                }
+            }
+        }
+    }
 
     init {
         pagingSource.refresh()
@@ -24,7 +54,7 @@ class PhotoPagingViewModel : ViewModel() {
     ) {
         pagingSource.setupSwipeRefreshLayout(owner, refreshLayout)
         pagingSource.setupLoadMoreFooter(owner, loadMoreFooter)
-        pagingSource.photos.observe(owner) { photos ->
+        photos.observe(owner) { photos ->
             adapter.submitList(photos)
         }
     }

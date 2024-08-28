@@ -1,5 +1,6 @@
 package com.takwolf.android.demo.refreshandloadmore.ui.activity
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.SystemBarStyle
@@ -14,6 +15,15 @@ import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.StoryPagingViewModel
 
 class ZhihuActivity : AppCompatActivity() {
+    companion object {
+        fun open(activity: AppCompatActivity, notFullPage: Boolean = false) {
+            val intent = Intent(activity, ZhihuActivity::class.java).apply {
+                putExtra("notFullPage", notFullPage)
+            }
+            activity.startActivity(intent)
+        }
+    }
+
     private val viewModel by viewModels<StoryPagingViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +35,7 @@ class ZhihuActivity : AppCompatActivity() {
         val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.toolbar.setTitle(R.string.zhihu)
+        binding.toolbar.setTitle(if (viewModel.notFullPage) R.string.zhihu_not_full_page else R.string.zhihu)
         binding.toolbar.setNavigationOnClickListener {
             finish()
         }

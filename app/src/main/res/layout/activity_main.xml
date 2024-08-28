@@ -38,11 +38,11 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/btn_photo_list_not_full"
+                android:id="@+id/btn_photo_list_not_full_page"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/photo_list_not_full"
+                android:text="@string/photo_list_not_full_page"
                 android:textAllCaps="false" />
 
             <Button
@@ -54,11 +54,11 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/btn_cnode_not_full"
+                android:id="@+id/btn_cnode_not_full_page"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/cnode_not_full"
+                android:text="@string/cnode_not_full_page"
                 android:textAllCaps="false" />
 
             <Button
@@ -70,11 +70,11 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/btn_zhihu_not_full"
+                android:id="@+id/btn_zhihu_not_full_page"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/zhihu_not_full"
+                android:text="@string/zhihu_not_full_page"
                 android:textAllCaps="false" />
 
         </LinearLayout>
