@@ -16,9 +16,5 @@ fun Context.showToast(text: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
 }
 
 fun Context.showToast(@StringRes stringId: Int, duration: Int = Toast.LENGTH_SHORT) {
-    currentToast?.get()?.cancel()
-    Toast.makeText(applicationContext, stringId, duration).apply {
-        show()
-        currentToast = WeakReference(this)
-    }
+    showToast(getString(stringId), duration)
 }
