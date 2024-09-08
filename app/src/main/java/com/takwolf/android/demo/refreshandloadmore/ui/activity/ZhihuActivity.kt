@@ -9,7 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.takwolf.android.demo.refreshandloadmore.R
-import com.takwolf.android.demo.refreshandloadmore.databinding.ActivityRefreshAndLoadMoreBinding
+import com.takwolf.android.demo.refreshandloadmore.databinding.ActivityDemoBinding
 import com.takwolf.android.demo.refreshandloadmore.ui.adapter.StoryListAdapter
 import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.StoryPagingViewModel
@@ -32,7 +32,7 @@ class ZhihuActivity : AppCompatActivity() {
             statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
         )
-        val binding = ActivityRefreshAndLoadMoreBinding.inflate(layoutInflater)
+        val binding = ActivityDemoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.toolbar.setTitle(if (viewModel.notFullPage) R.string.zhihu_not_full_page else R.string.zhihu)
