@@ -9,8 +9,8 @@
     app:isw_insetsPaddingBottom="false"
     app:isw_insetsColorTop="@color/app_primary_dark"
     app:isw_insetsColorBottom="@color/translucent_system_bars"
-    app:isw_insetsColorLeft="@color/translucent_system_bars"
-    app:isw_insetsColorRight="@color/translucent_system_bars">
+    app:isw_insetsColorLeft="@android:color/white"
+    app:isw_insetsColorRight="@android:color/white">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
