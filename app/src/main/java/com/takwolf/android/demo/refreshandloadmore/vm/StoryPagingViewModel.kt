@@ -9,8 +9,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.takwolf.android.demo.refreshandloadmore.model.zhihu.Story
 import com.takwolf.android.demo.refreshandloadmore.model.zhihu.ZhihuClient
 import com.takwolf.android.demo.refreshandloadmore.ui.adapter.StoryListAdapter
-import com.takwolf.android.demo.refreshandloadmore.util.Event
-import com.takwolf.android.demo.refreshandloadmore.util.observe
+import com.takwolf.android.demo.refreshandloadmore.util.lifecycle.Event
+import com.takwolf.android.demo.refreshandloadmore.util.lifecycle.observe
 import com.takwolf.android.demo.refreshandloadmore.util.showToast
 import com.takwolf.android.hfrecyclerview.paging.LoadMoreFooter
 import com.takwolf.android.hfrecyclerview.paging.PagingSource

@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.takwolf.android.demo.refreshandloadmore.model.local.Photo
 import com.takwolf.android.demo.refreshandloadmore.ui.adapter.PhotoListAdapter
-import com.takwolf.android.demo.refreshandloadmore.util.observe
+import com.takwolf.android.demo.refreshandloadmore.util.lifecycle.observe
 import com.takwolf.android.hfrecyclerview.paging.LoadMoreFooter
 import com.takwolf.android.hfrecyclerview.paging.PagingSource
 import com.takwolf.android.hfrecyclerview.paging.observe
