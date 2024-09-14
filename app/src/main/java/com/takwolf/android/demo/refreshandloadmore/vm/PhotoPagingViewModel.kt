@@ -10,6 +10,7 @@ import com.takwolf.android.demo.refreshandloadmore.ui.adapter.PhotoListAdapter
 import com.takwolf.android.demo.refreshandloadmore.util.observe
 import com.takwolf.android.hfrecyclerview.paging.LoadMoreFooter
 import com.takwolf.android.hfrecyclerview.paging.PagingSource
+import com.takwolf.android.hfrecyclerview.paging.observe
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -52,8 +53,14 @@ class PhotoPagingViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
         loadMoreFooter: LoadMoreFooter,
         adapter: PhotoListAdapter,
     ) {
-        pagingSource.setupSwipeRefreshLayout(owner, refreshLayout)
-        pagingSource.setupLoadMoreFooter(owner, loadMoreFooter)
+        refreshLayout.setOnRefreshListener {
+            pagingSource.refresh()
+        }
+        loadMoreFooter.onLoadMoreListener = LoadMoreFooter.OnLoadMoreListener {
+            pagingSource.loadMore()
+        }
+        pagingSource.refreshState.observe(owner, refreshLayout)
+        pagingSource.loadMoreState.observe(owner, loadMoreFooter)
         photos.observe(owner) { photos ->
             adapter.submitList(photos)
         }

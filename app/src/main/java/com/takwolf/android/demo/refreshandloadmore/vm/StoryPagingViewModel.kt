@@ -14,6 +14,7 @@ import com.takwolf.android.demo.refreshandloadmore.util.observe
 import com.takwolf.android.demo.refreshandloadmore.util.showToast
 import com.takwolf.android.hfrecyclerview.paging.LoadMoreFooter
 import com.takwolf.android.hfrecyclerview.paging.PagingSource
+import com.takwolf.android.hfrecyclerview.paging.observe
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -69,8 +70,14 @@ class StoryPagingViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
         loadMoreFooter: LoadMoreFooter,
         adapter: StoryListAdapter,
     ) {
-        pagingSource.setupSwipeRefreshLayout(activity, refreshLayout)
-        pagingSource.setupLoadMoreFooter(activity, loadMoreFooter)
+        refreshLayout.setOnRefreshListener {
+            pagingSource.refresh()
+        }
+        loadMoreFooter.onLoadMoreListener = LoadMoreFooter.OnLoadMoreListener {
+            pagingSource.loadMore()
+        }
+        pagingSource.refreshState.observe(activity, refreshLayout)
+        pagingSource.loadMoreState.observe(activity, loadMoreFooter)
         stories.observe(activity) { stories ->
             adapter.submitList(stories)
         }
