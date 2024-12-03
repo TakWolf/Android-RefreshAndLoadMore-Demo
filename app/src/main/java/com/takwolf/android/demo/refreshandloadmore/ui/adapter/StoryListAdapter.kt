@@ -2,6 +2,7 @@ package com.takwolf.android.demo.refreshandloadmore.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -28,9 +29,14 @@ class StoryListAdapter : ListAdapter<Story, StoryListAdapter.ViewHolder>(StoryDi
         fun bind(story: Story) {
             binding.tvTitle.text = story.title
             binding.tvHint.text = story.hint
-            binding.imgPhoto.load(story.images[0]) {
-                placeholder(R.color.image_placeholder)
-                error(R.color.image_placeholder)
+            story.images?.also { images ->
+                binding.imgPhoto.isVisible = true
+                binding.imgPhoto.load(images[0]) {
+                    placeholder(R.color.image_placeholder)
+                    error(R.color.image_placeholder)
+                }
+            } ?: run {
+                binding.imgPhoto.isVisible = false
             }
         }
     }
