@@ -18,7 +18,7 @@
 
 具体思路和实现细节请参考程序。
 
-![Demo](https://github.com/TakWolf/static.takwolf.com/raw/master/github/Android-RefreshAndLoadMore-Demo/01.gif)
+![Demo](https://github.com/TakWolf/static.takwolf.com/blob/master/www/github/Android-RefreshAndLoadMore-Demo/01.gif)
 
 ## License
 
