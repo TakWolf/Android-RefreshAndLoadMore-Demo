@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.takwolf.android.demo.refreshandloadmore"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.takwolf.android.demo.refreshandloadmore"
         minSdk = 21
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "0.0.1"
     }
