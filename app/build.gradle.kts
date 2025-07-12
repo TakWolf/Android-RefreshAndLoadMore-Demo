@@ -62,7 +62,7 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.squareup.moshi:moshi:1.15.2")
     ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.2")
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:5.1.0"))
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
