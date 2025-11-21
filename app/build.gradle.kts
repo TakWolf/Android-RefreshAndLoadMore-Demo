@@ -6,7 +6,9 @@ plugins {
 
 android {
     namespace = "com.takwolf.android.demo.refreshandloadmore"
-    compileSdk = 36
+    compileSdk {
+        version = release(36)
+    }
 
     defaultConfig {
         applicationId = "com.takwolf.android.demo.refreshandloadmore"
