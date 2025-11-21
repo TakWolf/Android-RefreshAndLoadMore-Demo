@@ -10,7 +10,7 @@ data class Story(
     val hint: String,
     val type: Int,
     val images: List<String>?,
-    @Json(name = "image_hue") val imageHue: String,
+    @param:Json(name = "image_hue") val imageHue: String,
     val url: String,
-    @Json(name = "ga_prefix") val gaPrefix: String,
+    @param:Json(name = "ga_prefix") val gaPrefix: String,
 )

@@ -7,17 +7,17 @@ import java.time.OffsetDateTime
 @JsonClass(generateAdapter = true)
 data class Topic(
     val id: String,
-    @Json(name = "author_id") val authorId: String,
+    @param:Json(name = "author_id") val authorId: String,
     val author: Author,
     val title: String,
     val tab: String?,
-    @Json(name = "good") val isGood: Boolean,
-    @Json(name = "top") val isTop: Boolean,
+    @param:Json(name = "good") val isGood: Boolean,
+    @param:Json(name = "top") val isTop: Boolean,
     val content: String,
-    @Json(name = "visit_count") val visitCount: Int,
-    @Json(name = "reply_count") val replyCount: Int,
-    @Json(name = "create_at") val createAt: OffsetDateTime,
-    @Json(name = "last_reply_at") val lastReplyAt: OffsetDateTime,
+    @param:Json(name = "visit_count") val visitCount: Int,
+    @param:Json(name = "reply_count") val replyCount: Int,
+    @param:Json(name = "create_at") val createAt: OffsetDateTime,
+    @param:Json(name = "last_reply_at") val lastReplyAt: OffsetDateTime,
 ) {
     val tabDisplayString: String
         get() {

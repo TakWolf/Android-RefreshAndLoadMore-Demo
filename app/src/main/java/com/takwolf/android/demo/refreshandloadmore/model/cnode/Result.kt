@@ -5,6 +5,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class DataResult<Data>(
-    @Json(name = "success") val isSuccessful: Boolean,
+    @param:Json(name = "success") val isSuccessful: Boolean,
     val data: Data,
 )

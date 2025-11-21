@@ -5,8 +5,8 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Author(
-    @Json(name = "loginname") val loginName: String?,
-    @Json(name = "avatar_url") val avatarUrl: String?,
+    @param:Json(name = "loginname") val loginName: String?,
+    @param:Json(name = "avatar_url") val avatarUrl: String?,
 ) {
     val avatarUrlCompat: String?
         get() {
