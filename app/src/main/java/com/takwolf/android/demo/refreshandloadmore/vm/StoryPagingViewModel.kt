@@ -15,6 +15,7 @@ import com.takwolf.android.demo.refreshandloadmore.util.showToast
 import com.takwolf.android.hfrecyclerview.paging.LoadMoreFooter
 import com.takwolf.android.hfrecyclerview.paging.PagingSource
 import com.takwolf.android.hfrecyclerview.paging.observe
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -52,6 +53,7 @@ class StoryPagingViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
                         date = page.date
                     }
                 } catch (e: Exception) {
+                    delay(1000)
                     if (onLoadMoreFailure(dataVersion)) {
                         errorEvent.value = Event(e.message ?: "load more error")
                     }
