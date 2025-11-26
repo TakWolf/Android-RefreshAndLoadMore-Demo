@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">下拉刷新和加载更多</string>
+    <string name="photo_list">图片列表</string>
+    <string name="photo_list_not_full_page">图片列表 不足一屏</string>
+    <string name="cnode">CNode 话题列表</string>
+    <string name="cnode_not_full_page">CNode 话题列表 不足一屏</string>
+    <string name="zhihu">知乎日报</string>
+    <string name="zhihu_not_full_page">知乎日报 不足一屏</string>
+    <string name="load_more_finished">没有更多内容</string>
+    <string name="load_more_failed">加载失败，点击重试</string>
+    <string name="just_now">刚刚</string>
+    <string name="d_minutes_ago">%d 分钟前</string>
+    <string name="d_hours_ago">%d 小时前</string>
+    <string name="d_days_ago">%d 天前</string>
+    <string name="d_weeks_ago">%d 周前</string>
+    <string name="d_months_ago">%d 个月前</string>
+    <string name="top">置顶</string>
+    <string name="d_reply_d_visit">%1$d 评论 / %2$d 阅读</string>
+    <string name="reply_at_s">新评论：%s</string>
+    <string name="create_at_s">创建于：%s</string>
+</resources>

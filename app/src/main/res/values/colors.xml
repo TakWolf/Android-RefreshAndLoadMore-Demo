@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_primary">#6200EE</color>
+    <color name="app_primary_dark">#3700B3</color>
+    <color name="background">#F6F6F6</color>
+    <color name="translucent_system_bars">#40000000</color>
+    <color name="image_placeholder">#1F000000</color>
+    <color name="cnode_primary">#80BD01</color>
+    <color name="cnode_topic_top">#FF5722</color>
+</resources>
