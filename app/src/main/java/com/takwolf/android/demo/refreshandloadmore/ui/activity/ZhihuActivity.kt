@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.takwolf.android.demo.refreshandloadmore.R
 import com.takwolf.android.demo.refreshandloadmore.databinding.ActivityDemoBinding
 import com.takwolf.android.demo.refreshandloadmore.ui.adapter.StoryListAdapter
-import com.takwolf.android.demo.refreshandloadmore.ui.widget.LoadMoreFooter
+import com.takwolf.android.demo.refreshandloadmore.ui.widget.AppLoadMoreFooter
 import com.takwolf.android.demo.refreshandloadmore.vm.StoryPagingViewModel
 
 class ZhihuActivity : AppCompatActivity() {
@@ -42,7 +42,7 @@ class ZhihuActivity : AppCompatActivity() {
 
         binding.refreshLayout.setColorSchemeResources(R.color.app_primary)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        val loadMoreFooter = LoadMoreFooter.create(binding.recyclerView).apply {
+        val loadMoreFooter = AppLoadMoreFooter.create(binding.recyclerView).apply {
             addToRecyclerView(binding.recyclerView)
         }
         binding.recyclerView.addFooterView(R.layout.footer_insets_navigation_bars)
