@@ -2,10 +2,11 @@ package com.takwolf.android.demo.refreshandloadmore.model.local
 
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
-import java.util.UUID
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.random.Random
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 data class Photo(
     val id: String,
@@ -35,8 +36,9 @@ data class Photo(
             "https://static.takwolf.com/app-test/minami-kotori/19.jpg",
         )
 
+        @OptIn(ExperimentalUuidApi::class)
         fun new(): Photo {
-            return Photo(UUID.randomUUID().toString(), URLS[abs(Random.nextInt() % URLS.size)])
+            return Photo(Uuid.random().toHexString(), URLS[abs(Random.nextInt() % URLS.size)])
         }
 
         fun newList(size: Int): List<Photo> {
