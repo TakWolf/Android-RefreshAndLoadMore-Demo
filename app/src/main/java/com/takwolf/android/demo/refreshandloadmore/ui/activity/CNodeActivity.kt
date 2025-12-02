@@ -41,7 +41,7 @@ class CNodeActivity : AppCompatActivity() {
         }
 
         binding.refreshLayout.setColorSchemeResources(R.color.app_primary)
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.layoutManager = LinearLayoutManager(null)
         val loadMoreFooter = AppLoadMoreFooter.create(binding.recyclerView).apply {
             addToRecyclerView(binding.recyclerView)
         }
