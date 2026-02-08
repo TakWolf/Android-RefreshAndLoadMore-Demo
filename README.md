@@ -1,6 +1,6 @@
 # Android - RefreshAndLoadMore Demo
 
-[![Android](https://img.shields.io/badge/android-23%2B-brightgreen)](https://developer.android.com)
+[![Android](https://img.shields.io/badge/android-23%2B-brightgreen?style=flat-square)](https://developer.android.com)
 
 一种简单且优雅的下拉刷新和加载更多分页的解决方案。
 
