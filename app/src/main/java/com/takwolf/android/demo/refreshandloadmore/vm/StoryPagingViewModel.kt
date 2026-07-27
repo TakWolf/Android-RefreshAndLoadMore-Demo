@@ -18,6 +18,7 @@ import com.takwolf.android.hfrecyclerview.paging.observe
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import kotlin.time.Duration.Companion.milliseconds
 
 class StoryPagingViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
     val notFullPage = savedStateHandle.get<Boolean>("notFullPage") ?: false
@@ -53,7 +54,7 @@ class StoryPagingViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
                         date = page.date
                     }
                 } catch (e: Exception) {
-                    delay(1000)
+                    delay(1000.milliseconds)
                     if (onLoadMoreFailure(dataVersion)) {
                         errorEvent.value = Event(e.message ?: "load more error")
                     }

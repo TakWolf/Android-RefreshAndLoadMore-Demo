@@ -5,6 +5,7 @@ import kotlinx.coroutines.delay
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.random.Random
+import kotlin.time.Duration.Companion.milliseconds
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
@@ -46,7 +47,7 @@ data class Photo(
         }
 
         suspend fun getPageAsync(pageNum: Int = 0, pageSize: Int = 20): Page<Photo> = coroutineScope {
-            delay(1000)
+            delay(1000.milliseconds)
             val remaining = max(100 - pageNum * pageSize, 0)
             if (remaining > pageSize) {
                 Page(newList(pageSize), true)
